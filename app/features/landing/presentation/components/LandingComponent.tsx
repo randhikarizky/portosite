@@ -543,7 +543,7 @@ const LandingComponent = () => {
                   </Stack>
                 </Grid>
               </StyledGrid>
-              <StyledGrid container>
+              <StyledGrid container className="link-grid">
                 <Grid item xs={4}>
                   <Typography variant="overline" color="text.disabled">
                     JUL 2019 - SEPT 2019
