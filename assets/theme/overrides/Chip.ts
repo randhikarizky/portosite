@@ -47,8 +47,8 @@ export default function Chip(theme: any) {
       ],
       styleOverrides: {
         root: {
-          borderRadius: theme.spacing(1),
-          fontWeight: 700,
+          borderRadius: theme.spacing(10),
+          fontWeight: 500,
           '&.MuiChip-deletable .MuiChip-deleteIcon': {
             color: 'inherit',
           },

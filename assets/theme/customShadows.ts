@@ -18,11 +18,11 @@ export default function customShadows() {
     z20: `0 20px 40px -4px ${transparent}`,
     z24: `0 24px 48px 0 ${transparent}`,
     //
-    primary: `0 8px 16px 0 ${alpha(palette.primary.main, 0.24)}`,
-    info: `0 8px 16px 0 ${alpha(palette.info.main, 0.24)}`,
-    success: `0 8px 16px 0 ${alpha(palette.success.main, 0.24)}`,
-    warning: `0 8px 16px 0 ${alpha(palette.warning.main, 0.24)}`,
-    error: `0 8px 16px 0 ${alpha(palette.error.main, 0.24)}`,
+    primary: `0 8px 16px 0 ${alpha(palette.primary.main, 0.12)}`,
+    info: `0 8px 16px 0 ${alpha(palette.info.main, 0.12)}`,
+    success: `0 8px 16px 0 ${alpha(palette.success.main, 0.12)}`,
+    warning: `0 8px 16px 0 ${alpha(palette.warning.main, 0.12)}`,
+    error: `0 8px 16px 0 ${alpha(palette.error.main, 0.12)}`,
     //
     card: `0 0 2px 0 ${alpha(color, 0.2)}, 0 12px 24px -4px ${alpha(
       color,
