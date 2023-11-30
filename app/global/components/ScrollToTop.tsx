@@ -3,6 +3,7 @@ import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Box from "@mui/material/Box";
 import Fade from "@mui/material/Fade";
 import { Fab } from "@mui/material";
+import { ArrowUpward } from "@mui/icons-material";
 
 interface Props {
   /**
@@ -36,12 +37,12 @@ export default function ScrollTop(props: Props) {
   return (
     <Fade in={trigger}>
       <Box
+        className="scroll-top"
         onClick={handleClick}
-        role="presentation"
         sx={{ position: "fixed", bottom: 32, right: 32, zIndex: "999" }}
       >
         <Fab color="default" sx={{ height: "50px", width: "50px" }}>
-          <i className="fas fa-arrow-up" style={{ padding: "0" }}></i>
+          <ArrowUpward fontSize="small" />
         </Fab>
       </Box>
     </Fade>
