@@ -37,6 +37,7 @@ const App = ({ Component, pageProps }: CustomAppProps) => {
             outerAlpha={0.1}
             innerScale={0.85}
             outerScale={2}
+            clickables={["a", ".link-grid"]}
           />
           <Component {...pageProps} />
         </Layout>

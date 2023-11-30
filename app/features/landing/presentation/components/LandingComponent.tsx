@@ -174,6 +174,7 @@ const LandingComponent = () => {
             <Stack rowGap={5}>
               <StyledGrid
                 container
+                className="link-grid"
                 onClick={() => window.open("https://autopedia.id/id", "_blank")}
               >
                 <Grid item xs={4}>
@@ -274,6 +275,7 @@ const LandingComponent = () => {
               </StyledGrid>
               <StyledGrid
                 container
+                className="link-grid"
                 onClick={() => window.open("https://asqi.co.id", "_blank")}
               >
                 <Grid item xs={4}>
@@ -366,6 +368,7 @@ const LandingComponent = () => {
               </StyledGrid>
               <StyledGrid
                 container
+                className="link-grid"
                 onClick={() => window.open("http://www.hexadaya.id/", "_blank")}
               >
                 <Grid item xs={4}>
@@ -454,6 +457,7 @@ const LandingComponent = () => {
               </StyledGrid>
               <StyledGrid
                 container
+                className="link-grid"
                 onClick={() => window.open("https://www.crowde.co/", "_blank")}
               >
                 <Grid item xs={4}>
