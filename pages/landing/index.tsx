@@ -1,9 +1,8 @@
+import LandingComponent from "@/app/features/landing/presentation/components/LandingComponent";
+import HeadComponent from "@/app/global/components/HeadComponent";
+import { NextPage } from "next";
 
-import LandingComponent from '@/app/features/landing/presentation/components/LandingComponent';
-import HeadComponent from '@/app/global/components/HeadComponent';
-import { NextPage } from 'next';
-
-const LandingPages: NextPage = () => {
+const LandingPage: NextPage = () => {
   return (
     <>
       <HeadComponent title="Welcome" />
@@ -11,4 +10,4 @@ const LandingPages: NextPage = () => {
     </>
   );
 };
-export default LandingPages;
+export default LandingPage;

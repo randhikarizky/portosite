@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Fade from "@mui/material/Fade";
 import { Fab } from "@mui/material";
 import { ArrowUpward } from "@mui/icons-material";
+import useResponsive from "../hooks/useResponsive";
 
 interface Props {
   /**
@@ -15,6 +16,7 @@ interface Props {
 
 export default function ScrollTop(props: Props) {
   const { window } = props;
+  const isDesktop = useResponsive({ query: "up", start: "md" });
 
   const trigger = useScrollTrigger({
     target: window ? window() : undefined,
@@ -39,7 +41,13 @@ export default function ScrollTop(props: Props) {
       <Box
         className="scroll-top"
         onClick={handleClick}
-        sx={{ position: "fixed", bottom: 32, right: 32, zIndex: "999" }}
+        sx={{
+          position: "fixed",
+          bottom: 32,
+          right: 32,
+          zIndex: "999",
+          opacity: isDesktop ? 1 : 0.5,
+        }}
       >
         <Fab color="default" sx={{ height: "50px", width: "50px" }}>
           <ArrowUpward fontSize="small" />

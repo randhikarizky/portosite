@@ -7,19 +7,12 @@ import ScrollTop from "@/app/global/components/ScrollToTop";
 import AnimatedCursor from "react-animated-cursor";
 import useResponsive from "@/app/global/hooks/useResponsive";
 
-const Footer = styled(AppBar)(({ theme }) => ({
-  boxShadow: "none",
-  backdropFilter: "blur(6px)",
-  WebkitBackdropFilter: "blur(6px)", // Fix on Mobile
-  backgroundColor: alpha(theme.palette.background.default, 0.72),
-  color: theme.palette.grey[600],
-}));
-
+import "@/assets/css/global.css";
 type CustomAppProps = AppProps & {
   pageProps: any;
 };
+
 const App = ({ Component, pageProps }: CustomAppProps) => {
-  const theme = useTheme();
   const isDesktop = useResponsive({ query: "up", start: "md" });
 
   return (

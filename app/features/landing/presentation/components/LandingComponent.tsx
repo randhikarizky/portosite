@@ -1,6 +1,12 @@
 import useResponsive from "@/app/global/hooks/useResponsive";
 import customShadows from "@/assets/theme/customShadows";
-import { ArrowOutward, GitHub, Instagram, LinkedIn } from "@mui/icons-material";
+import {
+  ArrowOutward,
+  GitHub,
+  Instagram,
+  LinkedIn,
+  Description,
+} from "@mui/icons-material";
 import {
   Box,
   Chip,
@@ -13,16 +19,9 @@ import {
   alpha,
   styled,
 } from "@mui/material";
-
-const StyledLink = styled(Link)(({ theme }) => ({
-  fontWeight: 700,
-  textDecoration: "none",
-  color: "inherit",
-  transition: "all .1s ease-in-out",
-  "&:hover": {
-    color: theme.palette.primary.main,
-  },
-}));
+import { selfTitle } from "../interface/landing.interface";
+import { useRouter } from "next/router";
+import { StyledLink } from "./peripherals/StyledLink/StyledLinkComponent";
 
 const StyledGrid = styled(Grid)(({ theme }) => ({
   transition: "all .1s ease-in-out",
@@ -44,6 +43,7 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
 
 const LandingComponent = () => {
   const isDesktop = useResponsive({ query: "up", start: "md" });
+  const router = useRouter();
 
   return (
     <Container
@@ -71,19 +71,12 @@ const LandingComponent = () => {
             >
               <Box>
                 <Typography variant="h2" color="primary.main">
-                  Randhika Rizkyaldi
+                  {selfTitle.full_name}
                 </Typography>
-                <Typography variant="h4">
-                  Experienced Front-End Developer
-                </Typography>
+                <Typography variant="h4">{selfTitle.position}</Typography>
                 <Typography variant="body1" color="text.disabled" mt={3}>
-                  I really love working using NextJS & MaterialUI.
+                  {selfTitle.slogan}
                 </Typography>
-                {/* <Stack rowGap={2} mt={10}>
-                  <Typography variant="body2">ABOUT</Typography>
-                  <Typography variant="body2">EXPERIENCE</Typography>
-                  <Typography variant="body2">PROJECT</Typography>
-                </Stack> */}
               </Box>
               <Stack
                 direction="row"
@@ -93,6 +86,13 @@ const LandingComponent = () => {
                   opacity: 0.75,
                 }}
               >
+                <IconButton
+                  title="Check out my Digital ATS Resume!"
+                  size="medium"
+                  onClick={() => router.push("/resume")}
+                >
+                  <Description />
+                </IconButton>
                 <IconButton
                   href="https://www.linkedin.com/in/randhikar"
                   target="_blank"
@@ -155,17 +155,21 @@ const LandingComponent = () => {
                   <StyledLink href="https://asqi.co.id/" target="_blank">
                     Fintech Start-up
                   </StyledLink>
-                  , and even a{" "}
+                  , a{" "}
                   <StyledLink href="https://autopedia.id/id" target="_blank">
-                    Huge Corporation
+                    Big Corporation
+                  </StyledLink>
+                  , and even one of{" "}
+                  <StyledLink href="https://alto.id/" target="_blank">
+                    The Biggest Switching Company in Indonesia
                   </StyledLink>
                   .
                 </Typography>
                 <Typography variant="body2">
                   My main focus in these past months is developing and
                   maintaining a project for my main-job company at{" "}
-                  <StyledLink href="https://autopedia.id/id" target="_blank">
-                    Autopedia
+                  <StyledLink href="https://alto.id/" target="_blank">
+                    Alto
                   </StyledLink>
                   . I love making global components and functions as reliable as
                   possible so I don't have to create a same or similiar one in
@@ -202,6 +206,104 @@ const LandingComponent = () => {
                 <StyledGrid
                   container
                   className="link-grid"
+                  onClick={() => window.open("https://alto.id/", "_blank")}
+                >
+                  <Grid item xs={12} md={4}>
+                    <Typography
+                      variant="overline"
+                      color="text.disabled"
+                      paragraph={!isDesktop}
+                    >
+                      JAN 2024 - PRESENT
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12} md={8}>
+                    <Stack rowGap={1}>
+                      <Box>
+                        <Typography variant="h6" color="primary.main">
+                          ALTO Network
+                          <ArrowOutward
+                            className="arrow-title"
+                            fontSize="inherit"
+                            sx={{
+                              ml: 0.5,
+                            }}
+                          />
+                        </Typography>
+                        <Typography variant="body1" color="text.disabled">
+                          Front-End Developer
+                        </Typography>
+                      </Box>
+                      <Box>
+                        <Typography
+                          variant="body2"
+                          color="text.disabled"
+                          paragraph
+                          align="justify"
+                        >
+                          My journey currently landed in one of The Biggest
+                          Switching Company in Indonesia,{" "}
+                          <StyledLink href="https://alto.id/" target="_blank">
+                            Alto Network
+                          </StyledLink>
+                          . I feel proud of myself because I'm now part of their
+                          amazing teams and family. Something that I could've
+                          never imagined before. Here, I'm being trusted to help
+                          them maintain and developing a project called{" "}
+                          <StyledLink
+                            href="https://altoconnect.id/"
+                            target="_blank"
+                          >
+                            Alto Connect
+                          </StyledLink>
+                          . My main task here is to develop new features
+                          according to user requests and resolve existing bugs.
+                          I also tend to help team by participating in their
+                          Release & Deployment schedule. For the tech stack of
+                          this application, we use ReactJS and JavaScript. For
+                          API matters, we use Axios. We also created
+                          custom-built components & functions in order to use
+                          them globally.
+                        </Typography>
+                      </Box>
+                      <Stack direction="row" gap={1} flexWrap="wrap">
+                        <Chip
+                          label="NextJS"
+                          size="small"
+                          variant="outlined"
+                          color="primary"
+                        />
+                        <Chip
+                          label="Axios"
+                          size="small"
+                          variant="outlined"
+                          color="primary"
+                        />
+                        <Chip
+                          label="JavaScript"
+                          size="small"
+                          variant="outlined"
+                          color="primary"
+                        />
+                        <Chip
+                          label="HTML"
+                          size="small"
+                          variant="outlined"
+                          color="primary"
+                        />
+                        <Chip
+                          label="CSS"
+                          size="small"
+                          variant="outlined"
+                          color="primary"
+                        />
+                      </Stack>
+                    </Stack>
+                  </Grid>
+                </StyledGrid>
+                <StyledGrid
+                  container
+                  className="link-grid"
                   onClick={() =>
                     window.open("https://autopedia.id/id", "_blank")
                   }
@@ -212,13 +314,13 @@ const LandingComponent = () => {
                       color="text.disabled"
                       paragraph={!isDesktop}
                     >
-                      JUNE 2022 - PRESENT
+                      JUNE 2022 - DEC 2023
                     </Typography>
                   </Grid>
                   <Grid item xs={12} md={8}>
                     <Stack rowGap={1}>
                       <Box>
-                        <Typography variant="subtitle1" color="primary.main">
+                        <Typography variant="h6" color="primary.main">
                           Autopedia
                           <ArrowOutward
                             className="arrow-title"
@@ -228,20 +330,21 @@ const LandingComponent = () => {
                             }}
                           />
                         </Typography>
-                        <Typography variant="body2" color="text.disabled">
+                        <Typography variant="body1" color="text.disabled">
                           Front-End Developer
                         </Typography>
                       </Box>
                       <Box>
                         <Typography
-                          variant="caption"
+                          variant="body2"
                           color="text.disabled"
                           paragraph
+                          align="justify"
                         >
-                          So far, my work experience here has been very good and
-                          without problems. I was assigned to handle their
-                          internal administration project, which was integrated
-                          with a car sales application called{" "}
+                          My work experience here has been very good and without
+                          problems. I was assigned to handle their internal
+                          administration project, which was integrated with a
+                          car sales application called{" "}
                           <StyledLink
                             href="https://caroline.id/"
                             target="_blank"
@@ -330,7 +433,7 @@ const LandingComponent = () => {
                   <Grid item xs={12} md={8}>
                     <Stack rowGap={1}>
                       <Box>
-                        <Typography variant="subtitle1" color="primary.main">
+                        <Typography variant="h6" color="primary.main">
                           ASQI
                           <ArrowOutward
                             className="arrow-title"
@@ -340,15 +443,16 @@ const LandingComponent = () => {
                             }}
                           />
                         </Typography>
-                        <Typography variant="body2" color="text.disabled">
+                        <Typography variant="body1" color="text.disabled">
                           Freelance Front-End Developer
                         </Typography>
                       </Box>
                       <Box>
                         <Typography
-                          variant="caption"
+                          variant="body2"
                           color="text.disabled"
                           paragraph
+                          align="justify"
                         >
                           Here, I was assigned to develop their project called{" "}
                           <StyledLink href="https://ergb.co.id" target="_blank">
@@ -430,7 +534,7 @@ const LandingComponent = () => {
                   <Grid item xs={12} md={8}>
                     <Stack rowGap={1}>
                       <Box>
-                        <Typography variant="subtitle1" color="primary.main">
+                        <Typography variant="h6" color="primary.main">
                           HEXA DAYA SOLUSI
                           <ArrowOutward
                             className="arrow-title"
@@ -440,15 +544,16 @@ const LandingComponent = () => {
                             }}
                           />
                         </Typography>
-                        <Typography variant="body2" color="text.disabled">
+                        <Typography variant="body1" color="text.disabled">
                           Front-End Developer
                         </Typography>
                       </Box>
                       <Box>
                         <Typography
-                          variant="caption"
+                          variant="body2"
                           color="text.disabled"
                           paragraph
+                          align="justify"
                         >
                           I work on their project for the Government of Jakarta.
                           I use React.JS, Redux, Axios, & Material UI Framework
@@ -525,7 +630,7 @@ const LandingComponent = () => {
                   <Grid item xs={12} md={8}>
                     <Stack rowGap={1}>
                       <Box>
-                        <Typography variant="subtitle1" color="primary.main">
+                        <Typography variant="h6" color="primary.main">
                           CROWDE
                           <ArrowOutward
                             className="arrow-title"
@@ -535,15 +640,16 @@ const LandingComponent = () => {
                             }}
                           />
                         </Typography>
-                        <Typography variant="body2" color="text.disabled">
+                        <Typography variant="body1" color="text.disabled">
                           Junior Front-End Developer
                         </Typography>
                       </Box>
                       <Box>
                         <Typography
-                          variant="caption"
+                          variant="body2"
                           color="text.disabled"
                           paragraph
+                          align="justify"
                         >
                           I dealt with their company-internal React.JS based
                           projects. I also sliced some of their Web Design from
@@ -614,7 +720,7 @@ const LandingComponent = () => {
                     <Stack rowGap={1}>
                       <Box>
                         <Typography
-                          variant="subtitle1"
+                          variant="h6"
                           color="primary.main"
                           onClick={() =>
                             window.open("https://www.lenmarc.com/", "_blank")
@@ -629,15 +735,16 @@ const LandingComponent = () => {
                             }}
                           />
                         </Typography>
-                        <Typography variant="body2" color="text.disabled">
+                        <Typography variant="body1" color="text.disabled">
                           Junior Front-End Developer & Quality Assurance
                         </Typography>
                       </Box>
                       <Box>
                         <Typography
-                          variant="caption"
+                          variant="body2"
                           color="text.disabled"
                           paragraph
+                          align="justify"
                         >
                           I built their project, an online training app called{" "}
                           <StyledLink

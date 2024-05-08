@@ -1,0 +1,5 @@
+@media print {
+  .scroll-top {
+    display: none !important;
+  }
+}
