@@ -14,9 +14,9 @@ const MainStyle = styled("div")(({ theme }) => ({
   minHeight: "100dvh",
   paddingTop: 8,
   paddingBottom: theme.spacing(10),
-  [theme.breakpoints.up("lg")]: {
+  [theme.breakpoints.up("md")]: {
     margin: "auto",
-    paddingTop: 88,
+    paddingTop: "10dvh",
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
   },

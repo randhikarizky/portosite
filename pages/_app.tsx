@@ -27,6 +27,7 @@ const App = ({ Component, pageProps }: CustomAppProps) => {
           />
           {isDesktop && (
             <AnimatedCursor
+              showSystemCursor={!isDesktop}
               innerSize={8}
               outerSize={100}
               color="15, 163, 177"

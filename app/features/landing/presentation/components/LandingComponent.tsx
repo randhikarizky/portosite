@@ -6,8 +6,10 @@ import {
   Instagram,
   LinkedIn,
   Description,
+  ArrowRight,
 } from "@mui/icons-material";
 import {
+  Avatar,
   Box,
   Chip,
   Container,
@@ -15,11 +17,12 @@ import {
   IconButton,
   Link,
   Stack,
+  Tooltip,
   Typography,
   alpha,
   styled,
 } from "@mui/material";
-import { selfTitle } from "../interface/landing.interface";
+import { projects, selfTitle } from "../interface/landing.interface";
 import { useRouter } from "next/router";
 import { StyledLink } from "./peripherals/StyledLink/StyledLinkComponent";
 
@@ -86,36 +89,43 @@ const LandingComponent = () => {
                   opacity: 0.75,
                 }}
               >
-                <IconButton
-                  title="Check out my Digital ATS Resume!"
-                  size="medium"
-                  onClick={() => router.push("/resume")}
-                >
-                  <Description />
-                </IconButton>
-                <IconButton
-                  href="https://www.linkedin.com/in/randhikar"
-                  target="_blank"
-                  size="medium"
-                >
-                  <LinkedIn />
-                </IconButton>
-                <IconButton
-                  href="https://www.github.com/randhikarizky"
-                  target="_blank"
-                  size="medium"
-                  disableRipple
-                >
-                  <GitHub />
-                </IconButton>
-                <IconButton
-                  href="https://www.instagram.com/randhikar_"
-                  target="_blank"
-                  size="medium"
-                  disableRipple
-                >
-                  <Instagram />
-                </IconButton>
+                <Tooltip title="Checkout my digital resume!">
+                  <IconButton
+                    size="medium"
+                    onClick={() => router.push("/resume")}
+                  >
+                    <Description />
+                  </IconButton>
+                </Tooltip>
+                <Tooltip title="Let's get connected on LinkedIn!">
+                  <IconButton
+                    href="https://www.linkedin.com/in/randhikar"
+                    target="_blank"
+                    size="medium"
+                  >
+                    <LinkedIn />
+                  </IconButton>
+                </Tooltip>
+                <Tooltip title="Checkout my Github!">
+                  <IconButton
+                    href="https://www.github.com/randhikarizky"
+                    target="_blank"
+                    size="medium"
+                    disableRipple
+                  >
+                    <GitHub />
+                  </IconButton>
+                </Tooltip>
+                <Tooltip title="Follow my Instagram!">
+                  <IconButton
+                    href="https://www.instagram.com/randhikar_"
+                    target="_blank"
+                    size="medium"
+                    disableRipple
+                  >
+                    <Instagram />
+                  </IconButton>
+                </Tooltip>
               </Stack>
             </Stack>
           </Box>
@@ -795,6 +805,95 @@ const LandingComponent = () => {
                 </StyledGrid>
               </Stack>
             </Box>
+
+            <Box>
+              <Typography
+                variant="h6"
+                sx={{
+                  px: isDesktop ? "1rem" : "unset",
+                  marginBottom: !isDesktop ? "2rem" : "unset",
+                }}
+              >
+                CONTRIBUTIONS
+              </Typography>
+              <Stack rowGap={5}>
+                {projects.map((d) => (
+                  <StyledGrid
+                    container
+                    className="link-grid"
+                    onClick={() =>
+                      d.link !== "" && window.open(d.link, "_blank")
+                    }
+                  >
+                    <Grid item xs={12} md={4}>
+                      {d.image !== "" && (
+                        <Box px={2}>
+                          <Avatar
+                            src={d.image}
+                            variant="rounded"
+                            sx={{
+                              minWidth: "100%",
+                              height: "auto",
+                              background: "transparent",
+                            }}
+                          />
+                        </Box>
+                      )}
+                    </Grid>
+                    <Grid item xs={12} md={8}>
+                      <Stack rowGap={1}>
+                        <Box>
+                          <Typography
+                            variant="h6"
+                            color="primary.main"
+                            onClick={() =>
+                              d.link !== ""
+                                ? window.open(d.link, "_blank")
+                                : undefined
+                            }
+                          >
+                            {d.title}
+                            {d.link !== "" && (
+                              <ArrowOutward
+                                className="arrow-title"
+                                fontSize="inherit"
+                                sx={{
+                                  ml: 0.5,
+                                }}
+                              />
+                            )}
+                          </Typography>
+                          <Typography variant="body1" color="text.disabled">
+                            {d.date}
+                          </Typography>
+                        </Box>
+                        <Box>
+                          <Typography
+                            variant="body2"
+                            color="text.disabled"
+                            paragraph
+                            align="justify"
+                          >
+                            {d.description}
+                          </Typography>
+                        </Box>
+                        <Stack direction="row" gap={1} flexWrap="wrap">
+                          {d.stacks.map((x) => (
+                            <Chip
+                              label={x}
+                              size="small"
+                              variant="outlined"
+                              color="secondary"
+                            />
+                          ))}
+                        </Stack>
+                      </Stack>
+                    </Grid>
+                  </StyledGrid>
+                ))}
+              </Stack>
+            </Box>
+
             <Typography variant="body2" color="text.disabled" paragraph>
               Sincerely built with{" "}
               <StyledLink href="https://www.nextjs.org" target="_blank">

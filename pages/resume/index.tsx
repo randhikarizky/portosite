@@ -2,7 +2,7 @@ import ResumeComponent from "@/app/features/resume/presentation/components/Resum
 import HeadComponent from "@/app/global/components/HeadComponent";
 import useResponsive from "@/app/global/hooks/useResponsive";
 import { ArrowBackOutlined, ArrowUpward, Print } from "@mui/icons-material";
-import { Box, Fab } from "@mui/material";
+import { Box, Fab, Tooltip } from "@mui/material";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 
@@ -24,9 +24,11 @@ const Resume: NextPage = () => {
           opacity: isDesktop ? 1 : 0.5,
         }}
       >
-        <Fab color="success" sx={{ height: "50px", width: "50px" }}>
-          <Print fontSize="small" />
-        </Fab>
+        <Tooltip title="Directly print my resume or save it as PDF">
+          <Fab color="success" sx={{ height: "50px", width: "50px" }}>
+            <Print fontSize="small" />
+          </Fab>
+        </Tooltip>
       </Box>
 
       <Box

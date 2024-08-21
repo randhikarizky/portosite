@@ -4,17 +4,15 @@ import {
   Box,
   Container,
   Grid,
-  Icon,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
   Stack,
-  SvgIcon,
   Typography,
 } from "@mui/material";
 import { SkillAbilities, WorkExperience } from "../interface/resume.interface";
-import { Circle, CircleNotifications } from "@mui/icons-material";
+import { Circle } from "@mui/icons-material";
 
 const ResumeComponent = () => {
   const isDesktop = useResponsive({ query: "up", start: "md" });
@@ -34,26 +32,28 @@ const ResumeComponent = () => {
           <Grid container rowGap={7.5}>
             <Grid item xs={12}>
               <Stack rowGap={1}>
-                <Typography variant="h1">Randhika Rizkyaldi</Typography>
+                <Typography variant="h1" fontFamily="Plus Jakarta Sans">
+                  Randhika Rizkyaldi
+                </Typography>
                 <Typography
                   variant="h4"
                   fontFamily="Plus Jakarta Sans"
-                  fontWeight={600}
+                  fontWeight={700}
                 >
                   FRONT-END DEVELOPER
                 </Typography>
                 <Typography
                   variant="h5"
                   fontFamily="Plus Jakarta Sans"
-                  fontWeight={800}
+                  fontWeight={500}
                   mt={1}
                 >
                   Jakarta |{" "}
                   <StyledLink
-                    href="https://wa.me/6281776677077"
+                    href="https://wa.me/6287714355354"
                     target="_blank"
                   >
-                    +6281776677077
+                    +6287714355354
                   </StyledLink>{" "}
                   |{" "}
                   <StyledLink href="mailto:rizkyran.rr@gmail.com">
@@ -69,9 +69,6 @@ const ResumeComponent = () => {
 
             <Grid item xs={12}>
               <Stack>
-                <Typography variant="h4" fontWeight={800} mb={2}>
-                  Objective
-                </Typography>
                 <Typography
                   variant="body2"
                   textAlign="justify"
@@ -107,7 +104,12 @@ const ResumeComponent = () => {
 
             <Grid item xs={12}>
               <Stack>
-                <Typography variant="h4" fontWeight={800} mb={2}>
+                <Typography
+                  variant="h4"
+                  fontWeight={800}
+                  mb={2}
+                  fontFamily="Plus Jakarta Sans"
+                >
                   Education
                 </Typography>
                 <Stack rowGap={5}>
@@ -118,7 +120,7 @@ const ResumeComponent = () => {
                         Engineering · Mar 2023 — Present
                       </Typography>
                       <Typography variant="body2">
-                        2<sup>nd</sup> Semester · Information Systems Major
+                        Information Systems Major
                       </Typography>
                     </Box>
                   </Stack>
@@ -148,7 +150,12 @@ const ResumeComponent = () => {
 
             <Grid item xs={12}>
               <Stack>
-                <Typography variant="h4" fontWeight={800} mb={2}>
+                <Typography
+                  variant="h4"
+                  fontWeight={800}
+                  mb={2}
+                  fontFamily="Plus Jakarta Sans"
+                >
                   Skills & Abilities
                 </Typography>
                 <Box>
@@ -177,7 +184,12 @@ const ResumeComponent = () => {
 
             <Grid item xs={12}>
               <Stack>
-                <Typography variant="h4" fontWeight={800} mb={2}>
+                <Typography
+                  variant="h4"
+                  fontWeight={800}
+                  mb={2}
+                  fontFamily="Plus Jakarta Sans"
+                >
                   Experiences
                 </Typography>
                 <Stack rowGap={5}>

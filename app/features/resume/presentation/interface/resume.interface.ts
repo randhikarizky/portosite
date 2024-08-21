@@ -47,7 +47,8 @@ export const WorkExperience = [
       "MUI is also used as the component library.",
       "For the main tech stack of this application, NextJS and TypeScript are used.",
       "For API matters, Axios and React-Query are used.",
-      "This application is still being developed and is not yet available to the public.",
+      "This application is continuosly used for its main purpose for these past few months.",
+      "You can access the app from the link attached below.",
     ],
   },
   {
@@ -95,7 +96,7 @@ export const WorkExperience = [
 export const SkillAbilities = [
   "Problem Solving",
   "NextJS",
-  "ReactJS",
+"ReactJS",
   "JavaScript",
   "TypeScript",
   "HTML",
