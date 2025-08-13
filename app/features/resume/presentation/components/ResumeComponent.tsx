@@ -61,7 +61,7 @@ const ResumeComponent = () => {
                   </StyledLink>{" "}
                   |{" "}
                   <StyledLink href="https://randhika.net/" target="_blank">
-                    randhika.net
+                    randhika.me
                   </StyledLink>
                 </Typography>
               </Stack>
