@@ -60,7 +60,7 @@ const ResumeComponent = () => {
                     rizkyran.rr@gmail.com
                   </StyledLink>{" "}
                   |{" "}
-                  <StyledLink href="https://randhika.net/" target="_blank">
+                  <StyledLink href="https://randhika.me/" target="_blank">
                     randhika.me
                   </StyledLink>
                 </Typography>
