@@ -8,11 +8,11 @@ const nextConfig = {
     return [
       {
         source: '/portofolio',
-        destination: 'https://randhikar.notion.site/', // Ganti ke link asli Notion kamu
+        destination: 'https://randhikar.notion.site',
       },
       {
         source: '/portofolio/:path*',
-        destination: 'https://randhikar.notion.site/:path*', // Untuk handle sub-path di Notion
+        destination: 'https://randhikar.notion.site/:path*',
       },
     ];
   },
